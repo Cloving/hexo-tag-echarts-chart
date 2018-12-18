@@ -55,95 +55,94 @@ var geoCoordMap = {
 };
 
 var convertData = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var geoCoord = geoCoordMap[data[i].name];
-        if (geoCoord) {
-            res.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value)
-            });
-        }
+  var res = [];
+  for (var i = 0; i < data.length; i++) {
+    var geoCoord = geoCoordMap[data[i].name];
+    if (geoCoord) {
+      res.push({
+        name: data[i].name,
+        value: geoCoord.concat(data[i].value)
+      });
     }
-    return res;
+  }
+  return res;
 };
 
 myChart.setOption(option = {
-    title : {
-        text: '',
-        subtext: '',
-        left: 'center',
-        top: 'top',
-        textStyle: {
-            color: '#fff'
-        }
+  title : {
+    text: '',
+    subtext: '',
+    left: 'center',
+    top: 'top',
+    textStyle: {
+      color: '#fff'
+    }
+  },
+  tooltip: {},
+  backgroundColor: {
+    type: 'linear',
+    x: 0, y: 0, x2: 1, y2: 1,
+    colorStops: [
+      {
+        offset: 0, color: '#0f2c70' // 0% 处的颜色
+      }, {
+        offset: 1, color: '#091732' // 100% 处的颜色
+      }
+    ],
+    globalCoord: false // 缺省为 false
+  },
+  geo: {
+    map: 'china',
+    show: true,
+    roam: true,
+    label: {
+      emphasis: {
+        show: false
+      }
     },
-    tooltip: {},
-    backgroundColor: {
-        type: 'linear',
-        x: 0,
-        y: 0,
-        x2: 1,
-        y2: 1,
-        colorStops: [{
-            offset: 0, color: '#0f2c70' // 0% 处的颜色
-        }, {
-            offset: 1, color: '#091732' // 100% 处的颜色
-        }],
-        globalCoord: false // 缺省为 false
-    },
-    geo: {
-        map: 'china',
-        show: true,
-        roam: true,
-        label: {
-            emphasis: {
-                show: false
-            }
-        },
-        itemStyle: {
-            normal: {
-                areaColor: '#091632',
-                borderColor: '#3B5077',
-                // shadowColor: '#1773c3',
-                // shadowBlur: 20
-            },
-            emphasis: {
-                 areaColor: '#3CB371',
-            }
+    itemStyle: {
+      normal: {
+        areaColor: '#091632',
+        borderColor: '#3B5077',
+        // shadowColor: '#1773c3',
+        // shadowBlur: 20
+      },
+      emphasis: {
+        areaColor: '#3CB371',
+      }
+    }
+  },
+  series: [
+    {
+      name: '',
+      type: 'effectScatter',
+      coordinateSystem: 'geo',
+      data: convertData(data),
+      symbolSize: function (val) {
+        return val[2] / 20;
+      },
+      showEffectOn: 'render',
+      rippleEffect: {
+        brushType: 'stroke'
+      },
+      hoverAnimation: true,
+      label: {
+          normal: {
+            formatter: '{b}',
+            position: 'right',
+            show: false
+          }
+      },
+      itemStyle: {
+        normal: {
+          color: '#ff4500',
+          shadowBlur: 10,
+          shadowColor: '#333'
         }
-    },
-    series: [
-        {
-            name: '',
-            type: 'effectScatter',
-            coordinateSystem: 'geo',
-            data: convertData(data),
-            symbolSize: function (val) {
-                return val[2] / 20;
-            },
-            showEffectOn: 'render',
-            rippleEffect: {
-                brushType: 'stroke'
-            },
-            hoverAnimation: true,
-            label: {
-                normal: {
-                    formatter: '{b}',
-                    position: 'right',
-                    show: false
-                }
-            },
-            itemStyle: {
-                normal: {
-                    color: '#ff4500',
-                    shadowBlur: 10,
-                    shadowColor: '#333'
-                }
-            },
-            zlevel: 1
-        }
-    ]
+      },
+      zlevel: 1
+    }
+  ]
 });
 {% endecharts %}
 ```
