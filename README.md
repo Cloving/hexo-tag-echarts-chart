@@ -1,8 +1,8 @@
 # hexo-tag-echarts-chart
 
-![npm](https://img.shields.io/badge/npm-v1.1.2-brightgreen.svg)
+![npm](https://img.shields.io/badge/npm-v5.5.1-brightgreen.svg)
 ![dependencies](https://img.shields.io/badge/dependencies-up%20to%20date-brightgreen.svg)
-![version](https://img.shields.io/badge/hexo--tag--echarts--chart-v1.0.1-brightgreen.svg)
+![version](https://img.shields.io/badge/hexo--tag--echarts--chart-v1.0.2-brightgreen.svg)
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
 ## Introduction
@@ -30,6 +30,7 @@ $ npm install hexo-tag-echarts-chart --save
 ## Demo
 ### sourceCode
 ```javascript
+{% echarts 500 '100%' %}
 {% echarts 500 '100%' %}
 var data = [
      {name: '成都', value: 200},{name: '西安', value: 200},
@@ -68,7 +69,7 @@ var convertData = function (data) {
   return res;
 };
 
-myChart.setOption(option = {
+option = {
   title : {
     text: '',
     subtext: '',
@@ -84,7 +85,7 @@ myChart.setOption(option = {
     x: 0, y: 0, x2: 1, y2: 1,
     colorStops: [
       {
-        offset: 0, color: '#0f2c70' // 0% 处的颜色
+        offset: 0, color: '#F0F8FF' // 0% 处的颜色
       }, {
         offset: 1, color: '#091732' // 100% 处的颜色
       }
@@ -102,7 +103,7 @@ myChart.setOption(option = {
     },
     itemStyle: {
       normal: {
-        areaColor: '#091632',
+        areaColor: '#D3D3D3',
         borderColor: '#3B5077',
         // shadowColor: '#1773c3',
         // shadowBlur: 20
@@ -143,7 +144,7 @@ myChart.setOption(option = {
       zlevel: 1
     }
   ]
-});
+};
 {% endecharts %}
 ```
 ### 渲染图
@@ -151,4 +152,4 @@ myChart.setOption(option = {
 
 
 ## More
-关于本插件更多信息请移步[这里]()
+关于本插件更多信息请戳[这里](http://yaodongsheng.com/2018/12/13/Echarts%E8%B6%B3%E8%BF%B9%E5%9B%BE/)

@@ -1,6 +1,6 @@
 {
   "name": "hexo-tag-echarts-chart",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A hexo tag for inserting echarts chart in your blog",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Cloving/hexo-tag-Echarts-chart.git"
+    "url": "git+https://github.com/Cloving/hexo-tag-echarts-chart.git"
   },
   "keywords": [
     "hexo",
@@ -18,9 +18,9 @@
   "author": "Cloving",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Cloving/hexo-tag-Echarts-chart/issues"
+    "url": "https://github.com/Cloving/hexo-tag-echarts-chart/issues"
   },
-  "homepage": "https://github.com/Cloving/hexo-tag-Echarts-chart#readme",
+  "homepage": "https://github.com/Cloving/hexo-tag-echarts-chart#readme",
   "dependencies": {
   	"underscore": "^1.8.3"
   }

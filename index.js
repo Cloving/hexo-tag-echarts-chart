@@ -5,13 +5,7 @@ var fs = require('fs'),
 var filePath = path.join(__dirname, 'template.html');
 
 function echartsMaps(args, content) {
-    var template = fs.readFileSync(filePath).toString(),
-        options = {};
-
-    if (content.length) {
-        var options = content;
-    }
-
+    var template = fs.readFileSync(filePath).toString();
     return _.template(template)({
         id: 'echarts' + ((Math.random() * 9999) | 0),
         sourceCode: content,
