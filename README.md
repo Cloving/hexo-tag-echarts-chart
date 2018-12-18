@@ -6,7 +6,7 @@
 ![license](https://img.shields.io/badge/license-MIT-brightgreen.svg)
 
 ## Introduction
-本插件参考[kchen0x/hexo-tag-echarts3](https://github.com/kchen0x/hexo-tag-echarts3)。
+本插件参考[kchen0x/hexo-tag-echarts3](https://github.com/kchen0x/hexo-tag-echarts3)
 ### 改动点：
 
 1、因为有足迹图的需求所以添加了可以嵌入地图的功能
