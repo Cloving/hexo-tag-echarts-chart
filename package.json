@@ -1,6 +1,6 @@
 {
   "name": "hexo-tag-echarts-chart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A hexo tag for inserting echarts chart in your blog",
   "main": "index.js",
   "scripts": {
